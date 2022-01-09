@@ -1,0 +1,20 @@
+# This file is used to control all the services of the project like database or application etc
+
+#version is the version of the docker compose
+version: '3.8'
+
+services:
+  # name of the service 'app'
+  app:
+    build:
+      context: .
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./app:/app
+
+    # executes command in shell -c is for command
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
