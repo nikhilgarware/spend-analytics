@@ -1,6 +1,6 @@
 #Using base image of python
 
-FROM python:3.9.0-slim
+FROM python:3.7-slim
 
 # used to set unbuffered Flase https://stackoverflow.com/questions/59812009/what-is-the-use-of-pythonunbuffered-in-docker-file/59812588
 ENV PYTHONUNBUFFERED 1
@@ -10,7 +10,6 @@ COPY ./requirements.txt /requirements.txt
 
 # install requirements into the docker image
 RUN pip install -r /requirements.txt
-
 #creates a app folder
 RUN mkdir /app
 
